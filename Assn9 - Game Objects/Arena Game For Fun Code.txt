@@ -1,0 +1,25 @@
+public void printArena(){
+    for (int y = 0; y < grid.size(); y++){
+        for (int x = 0; x < grid.get(y).length; x++){
+            Entity e = grid.get(y)[x];
+            char eChar = '-';
+
+            if (e != null) {
+                switch (e.getClass().getSimpleName()) {
+                    case "Hero":
+                        eChar = 'H';
+                        break;
+                    case "Dragon":
+                        eChar = 'D';
+                        break;
+                    case "Crate":
+                        eChar = 'C';
+                        break;
+                }
+            }
+
+            System.out.print(eChar + "   ");
+        }
+        System.out.println();
+    }
+}
